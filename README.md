@@ -38,12 +38,12 @@
 
 ## 示例页面
 
-![4](E:\cursor-project\sso-frontend\example\4.png)
+![4](example\4.png)
 
-![5](E:\cursor-project\sso-frontend\example\5.png)
+![5](example\5.png)
 
-![1](E:\cursor-project\sso-frontend\example\1.png)
+![1](example\1.png)
 
-![2](E:\cursor-project\sso-frontend\example\2.png)
+![2](example\2.png)
 
-![3](E:\cursor-project\sso-frontend\example\3.png)
+![3](example\3.png)
