@@ -1,0 +1,116 @@
+/* 协议页面样式 */
+.main-content {
+    min-height: calc(100vh - 64px - 43px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.agreement-container {
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.agreement-container h1 {
+    color: #1a73e8;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.agreement-content {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+section {
+    margin-bottom: 24px;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+section h2 {
+    color: #1a73e8;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+section p {
+    margin-bottom: 12px;
+}
+
+section p:last-child {
+    margin-bottom: 0;
+}
+
+section ul {
+    margin: 12px 0;
+    padding-left: 24px;
+}
+
+section li {
+    margin-bottom: 8px;
+}
+
+section li:last-child {
+    margin-bottom: 0;
+}
+
+/* Logo链接样式 */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-link:hover {
+    opacity: 0.9;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 16px;
+    }
+
+    .agreement-container {
+        padding: 20px;
+    }
+
+    .agreement-container h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

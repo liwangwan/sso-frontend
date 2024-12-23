@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻击者联盟 | 统一身份认证</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/icons.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Logo" class="logo">
+                </a>
+                <span class="divider">|</span>
+                <span class="title">统一身份认证</span>
+            </div>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <!-- 左侧温馨提示 -->
+            <div class="tips-section">
+                <div class="tips-box">
+                    <h2>温馨提示</h2>
+                    <div class="tips-list">
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>阻击者联盟统一身份认证系统是旗下各应用系统指定的身份认证平台。</p>
+                        </div>
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>请妥善保管账号密码，严禁将个人账号借予他人使用。</p>
+                        </div>
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>如遇到登录问题，请联系信息化办公室。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧登录区 -->
+            <div class="login-container">
+                <div class="login-box">
+                    <h2>统一身份认证</h2>
+                    <div class="login-tabs">
+                        <span class="tab-item active" data-tab="password">密码登录</span>
+                        <span class="tab-item" data-tab="phone">验证码登录</span>
+                    </div>
+                    <!-- 密码登录表单 -->
+                    <form id="passwordLoginForm" class="login-form active">
+                        <div class="input-group">
+                            <span class="icon user-icon"></span>
+                            <input type="text" id="username" placeholder="请输入用户名" required>
+                        </div>
+                        <div class="input-group">
+                            <span class="icon password-icon"></span>
+                            <input type="password" id="password" placeholder="请输入密码" required>
+                        </div>
+                        <div class="form-links">
+                            <a href="register.html" class="link">注册账号</a>
+                            <a href="reset-password.html" class="link">忘记密码？</a>
+                        </div>
+                        <div class="tips">
+                            初始密码为您的身份证（护照）后6位。
+                        </div>
+                        <button type="submit" class="login-btn">登 录</button>
+                    </form>
+                    <!-- 手机验证码登录表单 -->
+                    <form id="phoneLoginForm" class="login-form">
+                        <div class="input-group">
+                            <span class="icon phone-icon"></span>
+                            <input type="text" id="phone" placeholder="请输入手机号" required>
+                        </div>
+                        <div class="input-group verification-group">
+                            <input type="text" id="verificationCode" placeholder="请输入验证码" required>
+                            <button type="button" class="send-code-btn">获取验证码</button>
+                        </div>
+                        <button type="submit" class="login-btn">登 录</button>
+                    </form>
+                    <!-- 第三方登录 -->
+                    <div class="other-login">
+                        <div class="divider-line">
+                            <span>其他登录方式</span>
+                        </div>
+                        <div class="other-login-options">
+                            <a href="#" class="other-login-item" title="QQ登录">
+                                <span class="icon qq-icon"></span>
+                            </a>
+                            <a href="#" class="other-login-item" title="微信登录">
+                                <span class="icon wechat-icon"></span>
+                            </a>
+                            <a href="#" class="other-login-item" title="支付宝登录">
+                                <span class="icon alipay-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>版权所有 © 阻击者联盟信息化办公室</p>
+        </footer>
+    </div>
+
+    <!-- 移动端温馨提示弹窗 -->
+    <div class="modal" id="tipsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>温馨提示</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>1. 阻击者联盟统一身份认证系统是旗下各应用系统指定的身份认证平台。</p>
+                </div>
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>2. 登录账号为您的用户名，初始密码为本人身份证后6位。</p>
+                </div>
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>4. 请妥善保管账号密码，严禁将个人账号借予他人使用。</p>
+                </div>
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>5. 如遇到登录问题，请联系信息化办公室。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

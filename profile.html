@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻击者联盟 | 个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Logo" class="logo">
+                </a>
+                <span class="divider">|</span>
+                <span class="title">个人中心</span>
+            </div>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <!-- 左侧用户信息 -->
+            <div class="user-card">
+                <div class="user-info">
+                    <div class="avatar-wrapper">
+                        <img src="assets/avatar.jpg" alt="用户头像" class="avatar">
+                        <button class="edit-avatar" title="修改头像">
+                            <img src="assets/camera.svg" alt="修改头像" class="icon-camera">
+                        </button>
+                    </div>
+                    <h2 class="username">张三</h2>
+                    <p class="user-id">ID: 10086</p>
+                </div>
+                <div class="menu-list">
+                    <a href="#basic" class="menu-item active">基本信息</a>
+                    <a href="#security" class="menu-item">安全设置</a>
+                    <a href="#apps" class="menu-item">授权应用</a>
+                    <a href="#history" class="menu-item">登录历史</a>
+                </div>
+            </div>
+
+            <!-- 右侧内容区 -->
+            <div class="content-wrapper">
+                <!-- 基本信息 -->
+                <section id="basic" class="content-section">
+                    <h3 class="section-title">基本信息</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <label>用户名</label>
+                            <div class="info-content">
+                                <span>张三</span>
+                                <a href="#" class="edit-link" data-field="username">修改</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>手机号码</label>
+                            <div class="info-content">
+                                <span>138****8888</span>
+                                <a href="#" class="edit-link" data-field="phone">修改</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>邮箱地址</label>
+                            <div class="info-content">
+                                <span>zhangsan@example.com</span>
+                                <a href="#" class="edit-link" data-field="email">修改</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>真实姓名</label>
+                            <div class="info-content">
+                                <span>张三</span>
+                                <a href="#" class="edit-link" data-field="realname">修改</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+      
+                <!-- 安全设置 -->
+                <section id="security" class="content-section" style="display: none;">
+                    <h3 class="section-title">安全设置</h3>
+                    <div class="security-list">
+                        <div class="security-item">
+                            <div class="security-info">
+                                <h4>登录密码</h4>
+                                <p>建议您定期更换密码，设置安全性高的密码可以使账号更安全</p>
+                            </div>
+                            <a href="#" class="btn" onclick="openSecurityModal('password')">修改</a>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-info">
+                                <h4>手机验证</h4>
+                                <p>已绑定手机：138****8888</p>
+                            </div>
+                            <a href="#" class="btn" onclick="openSecurityModal('phone')">修改</a>
+                        </div>
+                        <div class="security-item">
+                            <div class="security-info">
+                                <h4>邮箱验证</h4>
+                                <p>已绑定邮箱：zhangsan@example.com</p>
+                            </div>
+                            <a href="#" class="btn" onclick="openSecurityModal('email')">修改</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 授权应用 -->
+                <section id="apps" class="content-section" style="display: none;">
+                    <h3 class="section-title">授权应用</h3>
+                    <div class="apps-list">
+                        <div class="app-item">
+                            <img src="assets/R-C.png" alt="应用图标" class="app-icon">
+                            <div class="app-info">
+                                <div class="app-meta">
+                                    <h4>示例应用1</h4>
+                                    <span class="app-time">授权时间：2024-01-01</span>
+                                </div>
+                                <p class="app-scope">授权范围：基本信息、手机号码</p>
+                            </div>
+                            <a href="#" class="btn btn-danger">取消授权</a>
+                        </div>
+                        <div class="app-item">
+                            <img src="assets/R-C.png" alt="应用图标" class="app-icon">
+                            <div class="app-info">
+                                <div class="app-meta">
+                                    <h4>示例应用2</h4>
+                                    <span class="app-time">授权时间：2024-01-15</span>
+                                </div>
+                                <p class="app-scope">授权范围：基本信息、身份信息</p>
+                            </div>
+                            <a href="#" class="btn btn-danger">取消授权</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 登录历史 -->
+                <section id="history" class="content-section" style="display: none;">
+                    <h3 class="section-title">登录历史</h3>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <div class="history-info">
+                                <div class="device">
+                                    <img src="assets/chrome.png" alt="PC" class="device-icon">
+                                    <div class="device-info">
+                                        <h4>Windows 10 - Chrome</h4>
+                                        <p>北京市 - 192.168.1.1</p>
+                                    </div>
+                                </div>
+                                <div class="login-info">
+                                    <time>2024-01-20 14:30:00</time>
+                                    <span class="status success">登录成功</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-info">
+                                <div class="device">
+                                    <img src="assets/safari.png" alt="Mobile" class="device-icon">
+                                    <div class="device-info">
+                                        <h4>iPhone - Safari</h4>
+                                        <p>上海市 - 192.168.1.2</p>
+                                    </div>
+                                </div>
+                                <div class="login-info">
+                                    <time>2024-01-19 10:15:00</time>
+                                    <span class="status success">登录成功</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>版权所有 © 阻击者联盟信息化办公室</p>
+        </footer>
+
+        <!-- 修改信息弹窗 -->
+        <div class="modal" id="editModal" style="display: none;">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3 class="modal-title">修改信息</h3>
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label id="editLabel"></label>
+                            <input type="text" id="editInput" required>
+                            <div class="verify-group" style="display: none;">
+                                <input type="text" id="verifyCode" placeholder="验证码" required>
+                                <button type="button" class="btn-verify" onclick="sendVerifyCode()">发送验证码</button>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-cancel" onclick="closeModal()">取消</button>
+                            <button type="submit" class="btn btn-primary">确定</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- 安全设置修改弹窗 -->
+        <div class="modal" id="securityModal" style="display: none;">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="securityModalTitle">修改密码</h3>
+                    <button class="modal-close" onclick="closeSecurityModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="securityForm" onsubmit="handleSecuritySubmit(event)">
+                        <!-- 修改密码表单 -->
+                        <div id="passwordForm" style="display: none;">
+                            <div class="form-group">
+                                <label>原密码</label>
+                                <input type="password" id="oldPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label>新密码</label>
+                                <input type="password" id="newPassword" required>
+                                <div class="password-strength">
+                                    <div class="strength-bar">
+                                        <div class="strength-progress" id="strengthProgress"></div>
+                                    </div>
+                                    <span class="strength-text" id="strengthText">密码强度：弱</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>确认新密码</label>
+                                <input type="password" id="confirmPassword" required>
+                            </div>
+                        </div>
+
+                        <!-- 修改手机号表单 -->
+                        <div id="phoneForm" style="display: none;">
+                            <div class="form-group">
+                                <label>当前手机号</label>
+                                <div class="verify-group">
+                                    <input type="text" id="currentPhone" value="138****8888" disabled>
+                                    <button type="button" class="btn-verify" onclick="sendVerifyCode('oldPhone')">发送验证码</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>验证码</label>
+                                <input type="text" id="oldPhoneCode" required>
+                            </div>
+                            <div class="form-group">
+                                <label>新手机号</label>
+                                <div class="verify-group">
+                                    <input type="text" id="newPhone" required>
+                                    <button type="button" class="btn-verify" onclick="sendVerifyCode('newPhone')">发送验证码</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>验证码</label>
+                                <input type="text" id="newPhoneCode" required>
+                            </div>
+                        </div>
+
+                        <!-- 修改邮箱表单 -->
+                        <div id="emailForm" style="display: none;">
+                            <div class="form-group">
+                                <label>当前邮箱</label>
+                                <div class="verify-group">
+                                    <input type="email" id="currentEmail" value="zhangsan@example.com" disabled>
+                                    <button type="button" class="btn-verify" onclick="sendVerifyCode('oldEmail')">发送验证码</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>验证码</label>
+                                <input type="text" id="oldEmailCode" required>
+                            </div>
+                            <div class="form-group">
+                                <label>新邮箱</label>
+                                <div class="verify-group">
+                                    <input type="email" id="newEmail" required>
+                                    <button type="button" class="btn-verify" onclick="sendVerifyCode('newEmail')">发送验证码</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>验证码</label>
+                                <input type="text" id="newEmailCode" required>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-cancel" onclick="closeSecurityModal()">取消</button>
+                            <button type="submit" class="btn btn-primary">确定</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面切换
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                // 移除所有active类
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+                // 隐藏所有内容区
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // 添加active类到当前项
+                item.classList.add('active');
+                // 显示对应内容区
+                const targetId = item.getAttribute('href').substring(1);
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+
+        // 当前编辑的字段
+        let currentField = '';
+        let countdown = 60;
+        let timer = null;
+
+        // 打开修改弹窗
+        function openModal(field, value) {
+            currentField = field;
+            const modal = document.getElementById('editModal');
+            const label = document.getElementById('editLabel');
+            const input = document.getElementById('editInput');
+            const verifyGroup = document.querySelector('.verify-group');
+            
+            // 设置标题和默认值
+            switch(field) {
+                case 'username':
+                    label.textContent = '用户名';
+                    verifyGroup.style.display = 'none';
+                    break;
+                case 'phone':
+                    label.textContent = '手机号码';
+                    verifyGroup.style.display = 'flex';
+                    break;
+                case 'email':
+                    label.textContent = '邮箱地址';
+                    verifyGroup.style.display = 'flex';
+                    break;
+                case 'realname':
+                    label.textContent = '真实姓名';
+                    verifyGroup.style.display = 'none';
+                    break;
+            }
+            
+            input.value = value;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭弹窗
+        function closeModal() {
+            const modal = document.getElementById('editModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            // 重置验证码按钮
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+            }
+            const verifyBtn = document.querySelector('.btn-verify');
+            verifyBtn.textContent = '发送验证码';
+            verifyBtn.disabled = false;
+            countdown = 60;
+        }
+
+        // 发送验证码
+        function sendVerifyCode() {
+            const verifyBtn = document.querySelector('.btn-verify');
+            verifyBtn.disabled = true;
+            
+            // 开始倒计时
+            timer = setInterval(() => {
+                if (countdown > 0) {
+                    verifyBtn.textContent = `${countdown}秒后重试`;
+                    countdown--;
+                } else {
+                    clearInterval(timer);
+                    verifyBtn.disabled = false;
+                    verifyBtn.textContent = '发送验证码';
+                    countdown = 60;
+                }
+            }, 1000);
+
+            // 这里添加发送验证码的接口调用
+            console.log('发送验证码');
+        }
+
+        // 提交修改
+        function handleSubmit(event) {
+            event.preventDefault();
+            const value = document.getElementById('editInput').value;
+            const verifyCode = document.getElementById('verifyCode').value;
+
+            // 这里添加提交修改的接口调用
+            console.log('提交修改', {
+                field: currentField,
+                value: value,
+                verifyCode: verifyCode
+            });
+
+            // 模拟成功
+            setTimeout(() => {
+                // 更新页面显示
+                const span = document.querySelector(`[data-field="${currentField}"]`);
+                if (span) {
+                    span.textContent = value;
+                }
+                closeModal();
+            }, 1000);
+        }
+
+        // 为所有修改按钮添加点击事件
+        document.querySelectorAll('.edit-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const field = link.getAttribute('data-field');
+                const value = link.previousElementSibling.textContent;
+                openModal(field, value);
+            });
+        });
+
+        // 当前编辑的安全设置类型
+        let currentSecurityType = '';
+
+        // 打开安全设置修改弹窗
+        function openSecurityModal(type) {
+            currentSecurityType = type;
+            const modal = document.getElementById('securityModal');
+            const title = document.getElementById('securityModalTitle');
+            
+            // 隐藏所有表单
+            document.getElementById('passwordForm').style.display = 'none';
+            document.getElementById('phoneForm').style.display = 'none';
+            document.getElementById('emailForm').style.display = 'none';
+            
+            // 根据类型显示对应表单
+            switch(type) {
+                case 'password':
+                    title.textContent = '修改密码';
+                    document.getElementById('passwordForm').style.display = 'block';
+                    break;
+                case 'phone':
+                    title.textContent = '修改手机号';
+                    document.getElementById('phoneForm').style.display = 'block';
+                    break;
+                case 'email':
+                    title.textContent = '修改邮箱';
+                    document.getElementById('emailForm').style.display = 'block';
+                    break;
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭安全设置修改弹窗
+        function closeSecurityModal() {
+            const modal = document.getElementById('securityModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            
+            // 重置所有验证码按钮
+            document.querySelectorAll('.btn-verify').forEach(btn => {
+                btn.textContent = '发送验证码';
+                btn.disabled = false;
+            });
+            
+            // 重置表单
+            document.getElementById('securityForm').reset();
+        }
+
+        // 发送验证码
+        function sendVerifyCode(type) {
+            const btn = event.target;
+            btn.disabled = true;
+            let countdown = 60;
+            
+            const timer = setInterval(() => {
+                if (countdown > 0) {
+                    btn.textContent = `${countdown}秒后重试`;
+                    countdown--;
+                } else {
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.textContent = '发送验证码';
+                }
+            }, 1000);
+
+            // 这里添加发送验证码的接口调用
+            console.log('发送验证码', type);
+        }
+
+        // 检查密码强度
+        function checkPasswordStrength(password) {
+            const progress = document.getElementById('strengthProgress');
+            const text = document.getElementById('strengthText');
+            
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            const strengthMap = {
+                0: { width: '0%', text: '密码强度：弱', color: '#ff4d4f' },
+                1: { width: '20%', text: '密码强度：弱', color: '#ff4d4f' },
+                2: { width: '40%', text: '密码强度：中', color: '#faad14' },
+                3: { width: '60%', text: '密码强度：中', color: '#faad14' },
+                4: { width: '80%', text: '密码强度：强', color: '#52c41a' },
+                5: { width: '100%', text: '密码强度：强', color: '#52c41a' }
+            };
+            
+            progress.style.width = strengthMap[strength].width;
+            progress.style.backgroundColor = strengthMap[strength].color;
+            text.textContent = strengthMap[strength].text;
+            text.style.color = strengthMap[strength].color;
+        }
+
+        // 处理安全设置表单提交
+        function handleSecuritySubmit(event) {
+            event.preventDefault();
+            
+            // 根据不同类型获取表单数据
+            let formData = {};
+            switch(currentSecurityType) {
+                case 'password':
+                    formData = {
+                        oldPassword: document.getElementById('oldPassword').value,
+                        newPassword: document.getElementById('newPassword').value,
+                        confirmPassword: document.getElementById('confirmPassword').value
+                    };
+                    break;
+                case 'phone':
+                    formData = {
+                        oldPhone: document.getElementById('currentPhone').value,
+                        oldPhoneCode: document.getElementById('oldPhoneCode').value,
+                        newPhone: document.getElementById('newPhone').value,
+                        newPhoneCode: document.getElementById('newPhoneCode').value
+                    };
+                    break;
+                case 'email':
+                    formData = {
+                        oldEmail: document.getElementById('currentEmail').value,
+                        oldEmailCode: document.getElementById('oldEmailCode').value,
+                        newEmail: document.getElementById('newEmail').value,
+                        newEmailCode: document.getElementById('newEmailCode').value
+                    };
+                    break;
+            }
+            
+            // 这里添加提交修改的接口调用
+            console.log('提交修改', currentSecurityType, formData);
+            
+            // 模拟成功
+            setTimeout(() => {
+                closeSecurityModal();
+                // 更新页面显示
+                if (currentSecurityType === 'phone') {
+                    const phoneText = document.querySelector('.security-item:nth-child(2) p');
+                    phoneText.textContent = `已绑定手机：${formData.newPhone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')}`;
+                } else if (currentSecurityType === 'email') {
+                    const emailText = document.querySelector('.security-item:nth-child(3) p');
+                    emailText.textContent = `已绑定邮箱：${formData.newEmail}`;
+                }
+            }, 1000);
+        }
+
+        // 监听密码输入事件
+        document.getElementById('newPassword')?.addEventListener('input', (e) => {
+            checkPasswordStrength(e.target.value);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,509 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f2f5 0%, #e6e9f0 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    position: relative;
+    width: 100%;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #fff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+.divider {
+    margin: 0 12px;
+    color: #ddd;
+    font-size: 18px;
+}
+
+.title {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* 主要内容区样式 */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 20px;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+/* 左侧温馨提示样式 */
+.tips-section {
+    flex: 1;
+    max-width: 500px;
+    height: fit-content;
+}
+
+.tips-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.tips-box h2 {
+    color: #1a73e8;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tips-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 6px;
+    background: #f8f9fa;
+    transition: transform 0.3s;
+}
+
+.tips-item:hover {
+    transform: translateY(-2px);
+    background: #f0f4f8;
+}
+
+.tips-item .icon {
+    flex-shrink: 0;
+    margin-right: 12px;
+    margin-top: 2px;
+    position: static;
+    transform: none;
+}
+
+.tips-item p {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+/* 右侧登录区样式 */
+.login-container {
+    flex: 1;
+    max-width: 380px;
+    height: fit-content;
+}
+
+.login-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* 登录方式切换标签 */
+.login-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    font-size: 14px;
+}
+
+.tab-item.active {
+    color: #1a73e8;
+}
+
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1a73e8;
+}
+
+/* 表单样式 */
+.login-form {
+    display: none;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 36px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s;
+    height: 40px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+}
+
+.verification-group {
+    display: flex;
+    gap: 8px;
+}
+
+.verification-group input {
+    flex: 1;
+    padding: 10px 12px;
+}
+
+.send-code-btn {
+    white-space: nowrap;
+    padding: 0 12px;
+    background: #fff;
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+    min-width: 102px;
+}
+
+.send-code-btn:hover {
+    background: #f0f7ff;
+}
+
+.send-code-btn:disabled {
+    background: #f5f5f5;
+    border-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.tips {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 40px;
+}
+
+.login-btn:hover {
+    background: #1557b0;
+}
+
+/* 其他登录方式 */
+.other-login {
+    margin-top: 20px;
+}
+
+.divider-line {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.divider-line::before,
+.divider-line::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.divider-line span {
+    padding: 0 12px;
+}
+
+.other-login-options {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.other-login-item {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    transition: all 0.3s;
+}
+
+.other-login-item:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+.other-login-item .icon {
+    position: static;
+    transform: none;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 12px;
+    color: #666;
+    font-size: 13px;
+    background: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* 表单链接样式 */
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #1557b0;
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .tips-section {
+        display: none;
+    }
+
+    .login-container {
+        max-width: 100%;
+    }
+
+    .login-box {
+        padding: 20px;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        height: 28px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .other-login-options {
+        gap: 20px;
+    }
+
+    .modal {
+        display: block;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    .send-code-btn {
+        font-size: 13px;
+        padding: 0 8px;
+        min-width: 95px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-box {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 8px;
+    padding: 20px;
+    animation: slideIn 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    color: #1a73e8;
+}
+
+.close-btn {
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+} 

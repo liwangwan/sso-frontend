@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻击者联盟 | 用户注册</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="assets/icons.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="Logo" class="logo">
+                </a>
+                <span class="divider">|</span>
+                <span class="title">用户注册</span>
+            </div>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <!-- 左侧说明 -->
+            <div class="tips-section">
+                <div class="tips-box">
+                    <h2>注册说明</h2>
+                    <div class="tips-list">
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>用户名要求：6-20位字母、数字或下划线组合，不能以数字开头。</p>
+                        </div>
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>密码要求：8-20位，必须包含大小写字母、数字和特殊字符。</p>
+                        </div>
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>手机号必须真实有效，将用于账号找回和安全验证。</p>
+                        </div>
+                        <div class="tips-item">
+                            <span class="icon info-icon"></span>
+                            <p>注册即表示同意《用户协议》和《隐私政策》。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧注册区 -->
+            <div class="register-container">
+                <div class="register-box">
+                    <h2>新用户注册</h2>
+                    <form id="registerForm" class="register-form">
+                        <!-- 用户名 -->
+                        <div class="input-group">
+                            <span class="icon user-icon"></span>
+                            <input type="text" id="username" placeholder="请设置用户名（6-20位字母、数字或下划线）" required
+                                pattern="^[a-zA-Z_][a-zA-Z0-9_]{5,19}$">
+                        </div>
+
+                        <!-- 密码 -->
+                        <div class="input-group">
+                            <span class="icon password-icon"></span>
+                            <input type="password" id="password" placeholder="请设置密码（8-20位，包含大小写字母、数字和特殊字符）" required>
+                            
+                        </div>
+                        <div class="password-strength" style="margin-bottom: 10px;">
+                            <div class="strength-bar">
+                                <div class="strength-level" id="strengthLevel"></div>
+                            </div>
+                            <div class="strength-text" id="strengthText">密码强度：弱</div>
+                        </div>
+
+                        <!-- 确认密码 -->
+                        <div class="input-group">
+                            <span class="icon password-icon"></span>
+                            <input type="password" id="confirmPassword" placeholder="请确认密码" required>
+                        </div>
+
+                        <!-- 手机号 -->
+                        <div class="input-group">
+                            <span class="icon phone-icon"></span>
+                            <input type="tel" id="phone" placeholder="请输入手机号" required
+                                pattern="^1[3-9]\d{9}$">
+                        </div>
+
+                        <!-- 验证码 -->
+                        <div class="input-group verification-group">
+                            <input type="text" id="verificationCode" placeholder="请输入验证码" required>
+                            <button type="button" class="send-code-btn">获取验证码</button>
+                        </div>
+
+                        <!-- 同意协议 -->
+                        <div class="agreement">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span>我已阅读并同意</span>
+                            </label>
+                            <a href="agreement.html" class="link">《用户协议》</a>
+                            <span>和</span>
+                            <a href="privacy.html" class="link">《隐私政策》</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn">注 册</button>
+                        
+                        <div class="form-footer">
+                            <span>已有账号？</span>
+                            <a href="index.html" class="link">立即登录</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>版权所有 © 阻击者联盟信息化办公室</p>
+        </footer>
+    </div>
+
+    <!-- 移动端说明弹窗 -->
+    <div class="modal" id="tipsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>注册说明</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>1. 用户名要求：6-20位字母、数字或下划线组合，不能以数字开头。</p>
+                </div>
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>2. 密码要求：8-20位，必须包含大小写字母、数字和特殊字符。</p>
+                </div>
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>3. 手机号必须真实有效，将用于账号找回和安全验证。</p>
+                </div>
+                <div class="tips-item">
+                    <span class="icon info-icon"></span>
+                    <p>4. 注册即表示同意《用户协议》和《隐私政策》。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html> 

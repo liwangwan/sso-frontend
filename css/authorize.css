@@ -1,0 +1,192 @@
+/* 主要内容区样式 */
+.main-content {
+    min-height: calc(100vh - 64px - 43px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 授权容器 */
+.authorize-container {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 应用信息 */
+.app-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.app-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.app-details {
+    flex: 1;
+}
+
+.app-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 4px;
+}
+
+.app-desc {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+/* 提示文本 */
+.notice-text {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px;
+}
+
+/* 权限内容区 */
+.auth-content {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+/* 权限列表 */
+.permissions-list {
+    margin: 0 0 20px;
+    padding-left: 20px;
+}
+
+.permissions-list li {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.permissions-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* 授权说明 */
+.auth-tips {
+    margin: 0;
+    padding-left: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+}
+
+.auth-tips li {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.auth-tips li:last-child {
+    margin-bottom: 0;
+}
+
+/* 操作按钮 */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0 20px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-deny {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.btn-deny:hover {
+    background: #e8e8e8;
+}
+
+.btn-allow {
+    background: #1a73e8;
+    color: #fff;
+}
+
+.btn-allow:hover {
+    background: #1557b0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 16px;
+    }
+
+    .authorize-container {
+        padding: 20px;
+    }
+
+    .app-info {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .app-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .app-name {
+        font-size: 16px;
+    }
+
+    .auth-content {
+        padding: 16px;
+    }
+
+    .notice-text,
+    .permissions-list li {
+        font-size: 13px;
+    }
+
+    .auth-tips li {
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 0 16px;
+        height: 32px;
+        font-size: 13px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
